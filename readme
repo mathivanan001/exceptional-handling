@@ -1,0 +1,61 @@
+
+PROGRAM:1
+public class exceptionhandlingexample 
+{ 
+public static void main(String[] args)
+{ 
+try
+{
+int result = divideNumbers(10, 0); System.out.println("Result: " + result);
+} catch (ArithmeticException e) {
+System.err.println("Error: Division by zero is not allowed.");
+} finally {
+System.out.println("Finally block executed.");
+}
+26
+}
+private static int divideNumbers(int numerator, int denominator) {
+return numerator / denominator;
+}
+}
+Output:
+Error: Division by zero is not allowed
+Finally block executed
+
+Program 2:
+class Calculator {
+public int add(int a, int b) {
+return a + b;
+}
+public int subtract(int a, int b) {
+return a - b;
+}
+public int multiply(int a, int b) {
+return a * b;
+}
+public int divide(int a, int b) {
+if (b != 0) {
+return a / b;
+} else {
+throw new ArithmeticException(“Cannot divide by zero!”);
+}
+}
+}
+public class PackageExample {
+public static void main(String[] args) {
+  Calculator calculator = new Calculator();
+int result = calculator.add(5, 3);
+System.out.println(“Addition: “ + result);
+result = calculator.subtract(5, 3);
+System.out.println(“Subtraction:” + result);
+result = calculator.multiply(5, 3);
+System.out.println(“Multiplication: “ + result);
+result = calculator.divide(10, 2);
+System.out.println(“Division: “ + result);
+}
+}
+Output:
+Addition: 8
+Subtraction: 2
+Multiplication: 15
+Division: 5
